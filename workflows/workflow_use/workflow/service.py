@@ -49,6 +49,7 @@ class Workflow:
 		browser: Browser | None = None,
 		llm: BaseChatModel | None = None,
 		fallback_to_agent: bool = True,
+		sensitive_data: dict | None = None,  # ✅ New parameter added
 	) -> None:
 		"""Initialize a new Workflow instance from a schema object.
 
@@ -72,6 +73,7 @@ class Workflow:
 		self.controller = controller or WorkflowController()
 		self.browser = browser or Browser()
 		self.llm = llm
+		self.sensitive_data = sensitive_data  # ✅ Assign to instance
 		self.fallback_to_agent = fallback_to_agent
 
 		self.browser_context = BrowserContext(browser=self.browser, config=self.browser.config.new_context_config)
@@ -152,6 +154,7 @@ class Workflow:
 		agent = Agent(
 			task=task,
 			llm=self.llm,
+			sensitive_data=self.sensitive_data,
 			browser=self.browser,
 			browser_context=self.browser_context,
 			use_vision=True,  # Consider making this configurable via WorkflowStep schema
