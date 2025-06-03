@@ -46,6 +46,7 @@ class Workflow:
 		workflow_schema: WorkflowDefinitionSchema,
 		*,
 		controller: WorkflowController | None = None,
+		agent_controller: WorkflowController | None = None,  # ✅ New optional parameter
 		browser: Browser | None = None,
 		llm: BaseChatModel | None = None,
 		fallback_to_agent: bool = True,
@@ -155,6 +156,7 @@ class Workflow:
 			task=task,
 			llm=self.llm,
 			sensitive_data=self.sensitive_data,
+			controller=self.agent_controller,
 			browser=self.browser,
 			browser_context=self.browser_context,
 			use_vision=True,  # Consider making this configurable via WorkflowStep schema
