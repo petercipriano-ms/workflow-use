@@ -36,7 +36,7 @@ from workflow_use.controller.utils import get_best_element_handle
 
 logger = logging.getLogger(__name__)
 
-WAIT_FOR_ELEMENT_TIMEOUT = 2500
+WAIT_FOR_ELEMENT_TIMEOUT = 10500
 
 class Workflow:
 	"""Simple orchestrator that executes a list of workflow *steps* defined in a WorkflowDefinitionSchema."""
