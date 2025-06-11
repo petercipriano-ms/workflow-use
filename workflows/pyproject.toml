@@ -18,6 +18,7 @@ dependencies = [
     "typer>=0.15.3",
     "uvicorn>=0.34.2",
     "pyotp",
+    "slack_sdk",
 ]
 
 
