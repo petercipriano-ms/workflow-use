@@ -19,6 +19,7 @@ dependencies = [
     "uvicorn>=0.34.2",
     "pyotp",
     "slack_sdk",
+    "aiohttp",
 ]
 
 
