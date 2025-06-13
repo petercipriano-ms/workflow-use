@@ -17,7 +17,7 @@ from workflow_use.controller.views import (
 
 logger = logging.getLogger(__name__)
 
-DEFAULT_ACTION_TIMEOUT_MS = 1000
+DEFAULT_ACTION_TIMEOUT_MS = 20500
 
 # List of default actions from browser_use.controller.service.Controller to disable
 # todo: come up with a better way to filter out the actions (filter IN the actions would be much nicer in this case)
